@@ -26,7 +26,6 @@ builtin = "history-watch"
 "~/.config/mise/mise.toml" = { mode = "track" }
 "~/.zshrc" = { mode = "track" }
 "~/.docker/cli-plugins/docker-compose" = { source = "~/.local/share/mise/shims/docker-compose" }
-"~/.config/mise/starship/starship.sh" = { mode = "track" }
 
 [tasks."colima:start"]
 run='''
