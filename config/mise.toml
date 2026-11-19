@@ -4,12 +4,17 @@ yarn = "1"
 starship = "latest"
 awscli = "latest"
 kubectl = "latest"
+colima = "latest"
+
+
 
 [bootstrap.mise_shell_activate]
 zsh = true
 
 [bootstrap.packages]
 "apt:gnupg" = "latest"
+"apt:docker.io" = "latest"
+"apt:docker-compose-v2" = "latest"
 
 [bootstrap.services.mise-history]
 builtin = "history-watch"
