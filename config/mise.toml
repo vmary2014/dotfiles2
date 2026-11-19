@@ -1,3 +1,10 @@
+[tools]
+node = "26.13.1"
+yarn = "1"
+starship = "latest"
+awscli = "latest"
+kubectl = "latest"
+
 [bootstrap.mise_shell_activate]
 zsh = true
 
