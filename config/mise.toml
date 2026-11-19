@@ -7,6 +7,7 @@ kubectl = "latest"
 colima = "latest"
 docker-cli = "latest"
 docker-compose = "latest"
+lima = "latest"
 
 [bootstrap.mise_shell_activate]
 zsh = true
@@ -25,3 +26,22 @@ builtin = "history-watch"
 "~/.config/mise/mise.toml" = { mode = "track" }
 "~/.zshrc" = { mode = "track" }
 "~/.docker/cli-plugins/docker-compose" = { source = "~/.local/share/mise/shims/docker-compose" }
+
+[tasks."colima:start"]
+run='''
+	colima start \
+	--profile default \
+	--activate \
+	--arch aarch64 \
+	--cpu 10 \
+	--disk 100 \
+	--memory 24 \
+	--mount ${HOME}:w \
+	--mount-inotify \
+	--ssh-agent \
+	--vm-type vz \
+	--vz-rosetta \
+	--verbose
+'''
+
+
