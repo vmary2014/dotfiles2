@@ -8,7 +8,7 @@ kubectl = "latest"
 [bootstrap.mise_shell_activate]
 zsh = true
 
-[botstrap.packages]
+[bootstrap.packages]
 "apt:gnupg" = "latest"
 
 [bootstrap.services.mise-history]
