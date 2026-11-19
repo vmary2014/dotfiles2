@@ -34,6 +34,12 @@ builtin = "history-watch"
 "~/.zshrc/starship" = { line = 'eval "$(starship init zsh)"' }
 "~/.bashrc/starship" = { line = 'eval "$(starship init bash)"' }
 
+# Ghostty
+"~/.config/ghostty/config/font" = { block = '''
+font-family = ""
+font-family = "FiraCode Nerd Font"
+''' }
+
 [tasks."colima:start"]
 run='''
 	colima start \
