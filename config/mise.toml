@@ -15,6 +15,8 @@ zsh = true
 [bootstrap.packages]
 "brew:gnupg" = "latest"
 "brew-cask:font-fira-code-nerd-font" = "latest"
+"brew-cask:firefox" = { adopt = true }
+"brew-cask:ghostty" = { adopt = true }
 
 [bootstrap.services.docker]
 state = "running"
