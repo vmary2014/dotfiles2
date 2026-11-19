@@ -16,6 +16,10 @@ zsh = true
 "apt:docker.io" = "latest"
 "apt:docker-compose-v2" = "latest"
 
+[bootstrap.services.docker]
+state = "running"
+enabled = true
+
 [bootstrap.services.mise-history]
 builtin = "history-watch"
 
