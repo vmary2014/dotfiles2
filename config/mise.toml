@@ -26,14 +26,6 @@ enabled = true
 builtin = "history-watch"
 
 [dotfiles]
-"~/.config/mise/mise.toml" = { mode = "track" }
-"~/.zshrc" = { mode = "track" }
-"~/.docker/cli-plugins/docker-compose" = { source = "~/.local/share/mise/shims/docker-compose" }
-
-# Starship
-"~/.config/starship.toml/custom" = { source = "dotfiles/starship.toml", merge = true }
-# Load the prompt in both shells
-"~/.zshrc/starship" = { line = 'eval "$(starship init zsh)"' }
 "~/.bashrc/starship" = { line = 'eval "$(starship init bash)"' }
 
 # Ghostty
@@ -41,6 +33,15 @@ builtin = "history-watch"
 font-family = ""
 font-family = "FiraCode Nerd Font"
 ''' }
+"~/.config/mise/dotfiles/starship.toml" = { mode = "track" }
+"~/.config/mise/mise.toml" = { mode = "track" }
+
+# Starship
+"~/.config/starship.toml/custom" = { source = "dotfiles/starship.toml", merge = true }
+"~/.docker/cli-plugins/docker-compose" = { source = "~/.local/share/mise/shims/docker-compose" }
+"~/.zshrc" = { mode = "track" }
+# Load the prompt in both shells
+"~/.zshrc/starship" = { line = 'eval "$(starship init zsh)"' }
 
 [tasks."colima:start"]
 run='''
