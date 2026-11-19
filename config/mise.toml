@@ -13,7 +13,7 @@ lima = "latest"
 zsh = true
 
 [bootstrap.packages]
-"apt:gnupg" = "latest"
+"brew:gnupg" = "latest"
 
 [bootstrap.services.docker]
 state = "running"
@@ -26,6 +26,12 @@ builtin = "history-watch"
 "~/.config/mise/mise.toml" = { mode = "track" }
 "~/.zshrc" = { mode = "track" }
 "~/.docker/cli-plugins/docker-compose" = { source = "~/.local/share/mise/shims/docker-compose" }
+
+# Starship
+"~/.config/starship.toml/custom" = { source = "dotfiles/starship.toml", merge = true }
+# Load the prompt in both shells
+"~/.zshrc/starship" = { line = 'eval "$(starship init zsh)"' }
+"~/.bashrc/starship" = { line = 'eval "$(starship init bash)"' }
 
 [tasks."colima:start"]
 run='''
@@ -44,4 +50,11 @@ run='''
 	--verbose
 '''
 
+# Create the base file from the preset, only if it doesn't exist yet
+[bootstrap.hooks.pre-dotfiles]
+description = "Create starship.toml from the bracketed-segments preset"
+run = '''
+mkdir -p ~/.config
+[ -f ~/.config/starship.toml ] || mise exec starship -- starship preset bracketed-segments -o ~/.config/starship.toml
+'''
 
