@@ -8,7 +8,6 @@ colima = "latest"
 docker-cli = "latest"
 docker-compose = "latest"
 
-
 [bootstrap.mise_shell_activate]
 zsh = true
 
@@ -25,4 +24,4 @@ builtin = "history-watch"
 [dotfiles]
 "~/.config/mise/mise.toml" = { mode = "track" }
 "~/.zshrc" = { mode = "track" }
-
+"~/.docker/cli-plugins/docker-compose" = { source = "~/.local/share/mise/shims/docker-compose" }
