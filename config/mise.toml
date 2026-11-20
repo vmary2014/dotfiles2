@@ -74,6 +74,12 @@ font-family = "FiraCode Nerd Font"
 keybind = super+h=unbind
 keybind = performable:super+h=text:\x1b[104;9u
 keybind = performable:super+l=text:\x1b[108;9u
+# Cmd+j / Cmd+k -> <D-j> / <D-k> : move to the window below / above (LazyVim's terminal opens below).
+# Defaults are "scroll to selection" and "clear screen", so unbind them first.
+keybind = super+j=unbind
+keybind = super+k=unbind
+keybind = performable:super+j=text:\x1b[106;9u
+keybind = performable:super+k=text:\x1b[107;9u
 # Cmd+] -> <D-]> : split with the previous buffer. Default Cmd+] is "Select Next Split" (menu item).
 keybind = super+]=unbind
 keybind = performable:super+]=text:\x1b[93;9u

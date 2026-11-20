@@ -13,8 +13,12 @@ local map = vim.keymap.set
 -- Cmd+h / Cmd+l move between windows. Ghostty sends these as CSI-u (see the nvim-window-nav block in
 -- ~/.config/ghostty/config), which Neovim reads as <D-h> / <D-l>. Neovide/GUIs send <D-*> natively.
 map({ "n", "x" }, "<D-h>", "<C-w>h", { desc = "Go to Left Window" })
+map({ "n", "x" }, "<D-j>", "<C-w>j", { desc = "Go to Lower Window" })
+map({ "n", "x" }, "<D-k>", "<C-w>k", { desc = "Go to Upper Window" })
 map({ "n", "x" }, "<D-l>", "<C-w>l", { desc = "Go to Right Window" })
 map("t", "<D-h>", "<cmd>wincmd h<cr>", { desc = "Go to Left Window" })
+map("t", "<D-j>", "<cmd>wincmd j<cr>", { desc = "Go to Lower Window" })
+map("t", "<D-k>", "<cmd>wincmd k<cr>", { desc = "Go to Upper Window" })
 map("t", "<D-l>", "<cmd>wincmd l<cr>", { desc = "Go to Right Window" })
 
 -- Show the previous (alternate) buffer on the left and keep the current one on the right.
