@@ -73,6 +73,9 @@ font-family = "FiraCode Nerd Font"
 keybind = super+h=unbind
 keybind = performable:super+h=text:\x1b[104;9u
 keybind = performable:super+l=text:\x1b[108;9u
+# Cmd+] -> <D-]> : split with the previous buffer. Default Cmd+] is "Select Next Split" (menu item).
+keybind = super+]=unbind
+keybind = performable:super+]=text:\x1b[93;9u
 ''' }
 "~/.config/mise/dotfiles/starship.toml" = { mode = "track" }
 "~/.config/mise/mise.toml" = { mode = "track" }

@@ -18,6 +18,8 @@ map("t", "<D-h>", "<cmd>wincmd h<cr>", { desc = "Go to Left Window" })
 map("t", "<D-l>", "<cmd>wincmd l<cr>", { desc = "Go to Right Window" })
 
 -- Show the previous (alternate) buffer on the left and keep the current one on the right.
+-- Cmd+] arrives as CSI-u from Ghostty (see the nvim-window-nav block in ~/.config/ghostty/config).
+map("n", "<D-]>", "<cmd>leftabove vsplit #<cr>", { desc = "Split with Previous Buffer on Left" })
 map("n", "<leader>wv", "<cmd>leftabove vsplit #<cr>", { desc = "Split with Previous Buffer on Left" })
 
 -- ── Editing ────────────────────────────────────────────────────────────────────
