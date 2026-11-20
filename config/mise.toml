@@ -73,6 +73,11 @@ font-family = "FiraCode Nerd Font"
 # Load the prompt in both shells
 "~/.zshrc/starship" = { line = 'eval "$(starship init zsh)"' }
 
+# Neovim (LazyVim). Sources live in dotfiles/nvim and are linked file-by-file into
+# ~/.config/nvim so that lazy.nvim can write lazy-lock.json / lazyvim.json back to them.
+"~/.config/nvim" = { source = "dotfiles/nvim", mode = "symlink-each" }
+"~/.config/mise/dotfiles/nvim" = { mode = "track", exclude = ["lazy-lock.json.bak"] }
+
 [tasks."colima:start"]
 run='''
 	colima start \
