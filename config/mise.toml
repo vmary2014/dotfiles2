@@ -66,6 +66,11 @@ builtin = "history-watch"
 font-family = ""
 font-family = "FiraCode Nerd Font"
 ''' }
+"~/.config/ghostty/config/nvim-window-nav" = { block = '''
+# Send Cmd+h / Cmd+l to the terminal app as CSI-u so Neovim sees <D-h> / <D-l>
+keybind = super+h=text:\x1b[104;9u
+keybind = super+l=text:\x1b[108;9u
+''' }
 "~/.config/mise/dotfiles/starship.toml" = { mode = "track" }
 "~/.config/mise/mise.toml" = { mode = "track" }
 
@@ -79,7 +84,7 @@ font-family = "FiraCode Nerd Font"
 # Neovim (LazyVim). Sources live in dotfiles/nvim and are linked file-by-file into
 # ~/.config/nvim so that lazy.nvim can write lazy-lock.json / lazyvim.json back to them.
 "~/.config/nvim" = { source = "dotfiles/nvim", mode = "symlink-each" }
-"~/.config/mise/dotfiles/nvim" = { mode = "track", exclude = ["lazy-lock.json.bak"] }
+"~/.config/mise/dotfiles/nvim" = { mode = "track" }
 
 [tasks."colima:start"]
 run='''
