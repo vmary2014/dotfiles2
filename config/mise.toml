@@ -13,6 +13,28 @@ oh-my-pi = "latest"
 telepresence = "latest"
 k9s = "latest"
 
+# Neovim / LazyVim
+neovim = "latest"
+ripgrep = "latest"
+fd = "latest"
+fzf = "latest"
+lazygit = "latest"
+tree-sitter = "latest"
+
+# Lua
+lua = "latest"
+lua-language-server = "latest"
+stylua = "latest"
+
+# TypeScript (node is pinned above)
+"npm:typescript" = "latest"
+"npm:@vtsls/language-server" = "latest"
+"npm:@fsouza/prettierd" = "latest"
+"npm:eslint_d" = "latest"
+
+# .NET (OmniSharp, csharpier, netcoredbg are installed by Mason from the dotnet extra)
+dotnet = "latest"
+
 [settings]
 github.credential_command = "gh auth token"
 minimum_release_age = "7d"
