@@ -10,13 +10,19 @@
 --     },
 --   },
 return {
-  -- LSP (applies to every attached server). Per-server keys go in lua/plugins/lsp.lua.
+  -- LSP keys for every attached server (LazyVim's current API; `has` limits a key to servers that
+  -- support the capability). Per-server keys go under that server in lua/plugins/lsp.lua.
   {
     "neovim/nvim-lspconfig",
-    opts = function()
-      local keys = require("lazyvim.plugins.lsp.keymaps").get()
-      -- keys[#keys + 1] = { "<leader>cx", vim.lsp.buf.code_action, desc = "Code Action", has = "codeAction" }
-    end,
+    opts = {
+      servers = {
+        ["*"] = {
+          keys = {
+            -- { "<leader>cx", vim.lsp.buf.code_action, desc = "Code Action", has = "codeAction" },
+          },
+        },
+      },
+    },
   },
 
   -- Debugging (nvim-dap)
