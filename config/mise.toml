@@ -67,9 +67,12 @@ font-family = ""
 font-family = "FiraCode Nerd Font"
 ''' }
 "~/.config/ghostty/config/nvim-window-nav" = { block = '''
-# Send Cmd+h / Cmd+l to the terminal app as CSI-u so Neovim sees <D-h> / <D-l>
-keybind = super+h=text:\x1b[104;9u
-keybind = super+l=text:\x1b[108;9u
+# Send Cmd+h / Cmd+l to the terminal app as CSI-u so Neovim sees <D-h> / <D-l>.
+# macOS binds Cmd+h to the "Hide Ghostty" menu item, and Ghostty runs a bound key's menu item before
+# its own action. `performable:` skips the menu lookup; `unbind` clears the default Cmd+h first.
+keybind = super+h=unbind
+keybind = performable:super+h=text:\x1b[104;9u
+keybind = performable:super+l=text:\x1b[108;9u
 ''' }
 "~/.config/mise/dotfiles/starship.toml" = { mode = "track" }
 "~/.config/mise/mise.toml" = { mode = "track" }
