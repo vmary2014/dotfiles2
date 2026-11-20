@@ -9,6 +9,7 @@ docker-cli = "latest"
 docker-compose = "latest"
 lima = "latest"
 gh = "latest"
+oh-my-pi = "latest"
 
 [settings]
 github.credential_command = "gh auth token"
