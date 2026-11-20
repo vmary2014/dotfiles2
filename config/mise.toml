@@ -8,6 +8,7 @@ colima = "latest"
 docker-cli = "latest"
 docker-compose = "latest"
 lima = "latest"
+gh = "latest"
 
 [bootstrap.mise_shell_activate]
 zsh = true
