@@ -32,8 +32,11 @@ stylua = "latest"
 "npm:@fsouza/prettierd" = "latest"
 "npm:eslint_d" = "latest"
 
-# .NET (OmniSharp, csharpier, netcoredbg are installed by Mason from the dotnet extra)
+# .NET. csharpier/fantomas come from Mason (lazyvim dotnet extra); omnisharp and netcoredbg come from
+# mise because Mason's registry entries point at release assets that no longer exist upstream.
 dotnet = "latest"
+"github:OmniSharp/omnisharp-roslyn" = { version = "latest", bin = "omnisharp" }
+"github:Samsung/netcoredbg" = "latest"
 
 [settings]
 github.credential_command = "gh auth token"
