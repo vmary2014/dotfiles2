@@ -32,10 +32,11 @@ stylua = "latest"
 "npm:@fsouza/prettierd" = "latest"
 "npm:eslint_d" = "latest"
 
-# .NET. csharpier/fantomas come from Mason (lazyvim dotnet extra); omnisharp and netcoredbg come from
-# mise because Mason's registry entries point at release assets that no longer exist upstream.
+# .NET. csharpier/fantomas come from Mason (lazyvim dotnet extra); netcoredbg comes from mise because
+# Mason's registry entry points at a release asset that no longer exists upstream.
+# The C# language server is Roslyn (driven by seblyng/roslyn.nvim), installed as a dotnet tool.
 dotnet = "latest"
-"github:OmniSharp/omnisharp-roslyn" = { version = "latest", bin = "omnisharp" }
+"dotnet:roslyn-language-server" = "latest"
 "github:Samsung/netcoredbg" = "latest"
 
 [settings]
