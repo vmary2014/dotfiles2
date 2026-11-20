@@ -8,6 +8,9 @@ return {
     ---@module 'roslyn.config'
     ---@type RoslynNvimConfig
     opts = {
+      -- Let the Roslyn server watch files itself. With the default ("auto"), Neovim's watcher prints
+      -- "watch.watch: ENOENT" on every C# session; "off" would stop change detection entirely.
+      filewatching = "roslyn",
       -- Search parent directories for a .sln/.slnx when the project is nested below it.
       broad_search = false,
     },
