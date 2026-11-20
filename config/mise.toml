@@ -10,6 +10,9 @@ docker-compose = "latest"
 lima = "latest"
 gh = "latest"
 
+[settings]
+github.credential_command = "gh auth token"
+
 [bootstrap.mise_shell_activate]
 zsh = true
 
