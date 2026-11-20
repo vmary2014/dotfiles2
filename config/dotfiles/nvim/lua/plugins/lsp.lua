@@ -45,10 +45,10 @@ return {
   {
     "mason-org/mason.nvim",
     opts = function(_, opts)
-      local provided_by_mise = { "stylua", "lua-language-server", "vtsls", "prettierd", "eslint_d" }
+      local provided_by_mise = { "stylua", "lua-language-server", "vtsls", "prettierd", "prettier", "eslint_d" }
       opts.ensure_installed = vim.tbl_filter(function(name)
         return not vim.tbl_contains(provided_by_mise, name)
-      local provided_by_mise = { "stylua", "lua-language-server", "vtsls", "prettierd", "prettier", "eslint_d" }
+      end, opts.ensure_installed or {})
     end,
   },
 }
