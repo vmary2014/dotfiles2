@@ -11,9 +11,11 @@ lima = "latest"
 gh = "latest"
 oh-my-pi = "latest"
 telepresence = "latest"
+k9s = "latest"
 
 [settings]
 github.credential_command = "gh auth token"
+minimum_release_age = "7d"
 
 [bootstrap.mise_shell_activate]
 zsh = true
