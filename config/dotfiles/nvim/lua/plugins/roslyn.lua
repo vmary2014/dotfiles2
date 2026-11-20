@@ -18,6 +18,18 @@ return {
 
   {
     "neovim/nvim-lspconfig",
+    init = function()
+      -- Roslyn asks the client to watch /usr/local/share/dotnet/packs, a system path that does not exist
+      -- here because the SDK lives under mise. Neovim reports the failed watch with a bare
+      -- "watch.watch: ENOENT" notification on every C# session. Drop only that message.
+      local notify = vim.notify
+      vim.notify = function(msg, ...)
+        if type(msg) == "string" and msg:find("^watch%.watch: ENOENT") then
+          return
+        end
+        return notify(msg, ...)
+      end
+    end,
     opts = function()
       vim.lsp.config("roslyn", {
         settings = {
