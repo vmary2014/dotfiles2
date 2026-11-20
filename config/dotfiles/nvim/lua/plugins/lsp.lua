@@ -1,5 +1,5 @@
 -- Language servers. Binaries on PATH come from mise (see ~/.config/mise/mise.toml); Mason is only
--- used for what mise cannot provide (OmniSharp, csharpier, netcoredbg, js-debug-adapter).
+-- used for what mise cannot provide (csharpier, fantomas, js-debug-adapter).
 return {
   {
     "neovim/nvim-lspconfig",
@@ -35,11 +35,9 @@ return {
           },
         },
 
-        -- C#: omnisharp from mise (the dotnet extra supplies handlers/keys; we only override how it starts)
-        omnisharp = {
-          mason = false,
-          cmd = { "omnisharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
-        },
+        -- C#: handled by seblyng/roslyn.nvim (lua/plugins/roslyn.lua). The dotnet extra enables
+        -- OmniSharp, so switch it off or both servers would attach to every .cs file.
+        omnisharp = { enabled = false },
       },
     },
   },
@@ -48,8 +46,8 @@ return {
   {
     "mason-org/mason.nvim",
     opts = function(_, opts)
-      local provided_by_mise =
-        { "stylua", "lua-language-server", "vtsls", "prettierd", "prettier", "eslint_d", "omnisharp", "netcoredbg" }
+      local provided_by_mise = { "stylua", "lua-language-server", "vtsls", "prettierd", "prettier", "eslint_d" }
+      vim.list_extend(provided_by_mise, { "omnisharp", "netcoredbg", "roslyn", "roslyn-language-server" })
       opts.ensure_installed = vim.tbl_filter(function(name)
         return not vim.tbl_contains(provided_by_mise, name)
       end, opts.ensure_installed or {})
