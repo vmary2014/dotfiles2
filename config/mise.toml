@@ -10,6 +10,7 @@ docker-compose = "latest"
 lima = "latest"
 gh = "latest"
 oh-my-pi = "latest"
+telepresence = "latest"
 
 [settings]
 github.credential_command = "gh auth token"
